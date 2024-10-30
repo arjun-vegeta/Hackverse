@@ -67,3 +67,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 12px; /* Sets width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #360E10;
+  border-radius: 10px;
+  border: 2px solid #f0f0f0; /* Adds padding effect */
+}
