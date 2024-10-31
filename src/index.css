@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -68,10 +69,15 @@
   }
 }
 
+body {
+  font-family: "Antonio", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 
 /* For Chrome, Edge, Safari */
 ::-webkit-scrollbar {
-  width: 12px; /* Sets width of the entire scrollbar */
+  width: 0px; /* Sets width of the entire scrollbar */
 }
 
 ::-webkit-scrollbar-track {
