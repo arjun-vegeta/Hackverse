@@ -1,73 +1,88 @@
-import React from 'react';
-import LampDemo, { LampContainer } from './ui/lamp';
-import { motion } from 'framer-motion';
+"use client";
+import React, { useRef } from "react";
+import { LampDemo } from "./ui/lamp";
+import { motion, useInView } from "framer-motion";
 
-function About() {
+export default function About() {
+  const titleRef = useRef(null);
+  const isTitleInView = useInView(titleRef, { triggerOnce: false });
+
+  const textRef1 = useRef(null);
+  const isText1InView = useInView(textRef1, { triggerOnce: false });
+
+  const textRef2 = useRef(null);
+  const isText2InView = useInView(textRef2, { triggerOnce: false });
+
+  const imageRef = useRef(null);
+  const isImageInView = useInView(imageRef, { triggerOnce: false });
+
+  const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeInOut" } },
+  };
+
   return (
-    <div className="h-screen w-full flex flex-col relative overflow-visible">
-      
-      {/* Main content sections */}
-      <div className="text-white p-10 text-xl z-20">
-        <h2 className="font-bold bg-[#7B181D] uppercase inline-block p-1">
-          Unleash the power of innovation in the icy depths of
-        </h2>
-        <br />
-        <h2 className="font-bold bg-[#7B181D] uppercase inline-block mt-1 p-1">
-          HackVerse, where the Arctic meets technology
-        </h2>
-      </div>
-
-      <div className="text-white z-20 p-10 w-[60%]">
-        <p className="text-lg font-semibold">
-          Join us at HackVerse, a platform that celebrates the power of
-          enthusiastic minds to ideate innovative solutions for complex issues across India.
-          It all started with a vision to bring together like-minded hackers to our alma mater
-          in NITK Surathkal, and we're thrilled to be the pioneers of this unique initiative.
-        </p>
-        <br />
-        <p className="text-lg font-semibold">
-          Be a part of an experience that celebrates innovation and provides developers with the
-          opportunity to showcase their potential to the fullest. Get inspired by industry leaders
-          through engaging keynotes and workshops.
-        </p>
-      </div>
-
-      {/* LampContainer is positioned absolutely to cover both divs */}
-      <div className="absolute top-0 right-0 w-full z-10 bg-slate-950 overflow-hidden">
-        <LampContainer className="translate-x-[25%] relative" />
-        
+    <div className="relative min-h-screen bg-black flex flex-col md:flex-row items-center justify-center px-4 md:px-12 overflow-hidden">
+      {/* Left Section */}
+      <div className="relative z-10 w-full md:w-3/5 flex flex-col justify-center space-y-4 text-white mb-8 md:mb-0">
         <motion.h1
-          initial={{ opacity: 0.5, y: 70 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 1,
-            ease: 'easeInOut',
-          }}
-          className="absolute top-10 right-10 z-10"
+          ref={titleRef}
+          initial="hidden"
+          animate={isTitleInView ? "visible" : "hidden"}
+          variants={fadeIn}
+          className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight text-center md:text-left"
+        >
+          About Us
+        </motion.h1>
+        <motion.p
+          ref={textRef1}
+          initial="hidden"
+          animate={isText1InView ? "visible" : "hidden"}
+          variants={fadeIn}
+          transition={{ duration: 1, delay: 0.3, ease: "easeInOut" }}
+          className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center md:text-left px-2 sm:px-6 md:px-0"
+        >
+          We’re committed to crafting exceptional solutions that bring value to
+          our users and partners. Our focus on innovation, quality, and design
+          excellence has been the cornerstone of our success.
+        </motion.p>
+        <motion.p
+          ref={textRef2}
+          initial="hidden"
+          animate={isText2InView ? "visible" : "hidden"}
+          variants={fadeIn}
+          transition={{ duration: 1, delay: 0.6, ease: "easeInOut" }}
+          className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center md:text-left px-2 sm:px-6 md:px-0"
+        >
+          Join us on a journey of creativity and growth as we continue to
+          redefine the possibilities of technology and design.
+        </motion.p>
+      </div>
+
+      {/* Right Section */}
+      <div className="relative w-full md:w-2/5 flex items-center justify-center mt-8 md:mt-0">
+        {/* Bottom Layer: Lamp */}
+        <div className="absolute inset-0 flex items-center justify-center z-0" style={{ transform: 'translateY(-44px)' }}>
+          <LampDemo />
+        </div>
+
+        {/* Top Layer: Image */}
+        <motion.div
+          ref={imageRef}
+          initial="hidden"
+          animate={isImageInView ? "visible" : "hidden"}
+          variants={fadeIn}
+          transition={{ duration: 1, delay: 0.3, ease: "easeInOut" }}
+          className="relative flex items-center justify-center z-10"
+          style={{ transform: 'translateY(40px)' }}
         >
           <img
-            src="/hackverse-img.png"
-            alt="HackVerse"
-            className="w-[531px] top-0 right-0 z-0"
+            src="hackverse-img.png" // Replace with the correct image path
+            alt="Lamp Demo"
+            className="w-32 sm:w-48 md:w-auto h-auto object-contain"
           />
-          <motion.div
-          initial={{ scaleX: 0.2 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          style={{ originX: 0.5 }}
-          className="absolute -z-10 h-36 w-96 bottom-32 right-[15%] bg-red-400 blur-3xl opacity-50"
-        />
-        </motion.h1>
-        
-
+        </motion.div>
       </div>
     </div>
   );
 }
-
-export default About;
