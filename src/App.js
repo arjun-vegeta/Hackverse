@@ -10,6 +10,7 @@ function App() {
     <div className="overflow-x-hidden">
       <Landing />
       <About />
+      <StatsSection />
       {/* Add other sections like PRIZES, TRACKS, etc. */}
     </div>
   );
