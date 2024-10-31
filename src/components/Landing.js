@@ -79,19 +79,25 @@ const Landing = () => {
 
         {/* Navigation Menu */}
         <motion.div
-          className="flex flex-col items-end text-xl font-bold w-full mr-20 relative"
-          variants={fadeIn}
-        >
-          {['HOME', 'ABOUT', 'PRIZES', 'JUDGES & SPEAKERS', 'TRACKS', 'TIMELINE', 'SPONSORS'].map((item) => (
-            <button
-              key={item}
-              className="hover:underline cursor-pointer mb-3 text-[#dadada]"
-              onClick={() => handleScroll(item.toLowerCase())}
-            >
-              {item}
-            </button>
-          ))}
-        </motion.div>
+  className="flex flex-col items-end text-xl font-bold w-full mr-10 relative"
+  variants={fadeIn}
+>
+  <div className="flex flex-col mr-5 items-end">
+    {['HOME', 'ABOUT', 'PRIZES', 'JUDGES & SPEAKERS', 'TRACKS', 'TIMELINE', 'SPONSORS'].map((item) => (
+      <button
+        key={item}
+        className="hover:underline cursor-pointer mb-3 text-[#dadada]"
+        onClick={() => handleScroll(item.toLowerCase())}
+      >
+        {item}
+      </button>
+    ))}
+  </div>
+
+  {/* Red Line with 100% height to be fully visible */}
+  <div className="absolute h-full w-0.5 bg-red-700 right-0 top-0 mt-4 transform -translate-y-4" /> 
+</motion.div>
+
       </motion.div>
 
       {/* Right Section with Image */}

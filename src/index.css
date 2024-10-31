@@ -89,3 +89,7 @@ body {
   border-radius: 10px;
   border: 2px solid #f0f0f0; /* Adds padding effect */
 }
+
+.bg-custom {
+  background-color: #7B181D; /* Your custom color */
+}
