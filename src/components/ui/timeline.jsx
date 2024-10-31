@@ -26,11 +26,11 @@ export const Timeline = ({
 
   return (
     (<div
-      className="w-full bg-black dark:bg-white font-sans md:px-10"
+      className="w-full bg-black dark:bg-white md:px-10"
       ref={containerRef}>
-      <div className="max-w-7xl mx-auto pt-10 pb-[-5] px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-6xl mb-4 font-bold  text-[#9B1B21] dark:text-white max-w-4xl">
-          Day 1 Schedule
+      <div className="max-w-7xl mx-auto pt-10 pb-[-5] px-4 md:px-8 lg:px-0">
+        <h2 className="text-4xl md:text-6xl mb-4 font-bold  text-[#9B1B21] dark:text-white max-w-4xl">
+          Heist Timeline
         </h2>
         {/* <p
           className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
@@ -38,7 +38,7 @@ export const Timeline = ({
       </div>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
-          <div key={index} className="flex justify-start pt-10 md:pt-40 md:gap-10">
+          <div key={index} className="flex justify-start pt-10 md:pt-10 md:gap-0">
             <div
               className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               <div
@@ -47,7 +47,7 @@ export const Timeline = ({
                   className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
               <h3
-                className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-gray-200 dark:text-gray-200 ">
+                className="hidden md:block text-xl md:pl-20 md:text-3xl font-bold text-gray-200 dark:text-gray-200 ">
                 {item.title}
               </h3>
             </div>
@@ -71,7 +71,7 @@ export const Timeline = ({
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-red-300 via-red-500 to-transparent from-[0%] via-[10%] rounded-full" />
+            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-red-500 via-[#9B1B21] to-transparent from-[0%] via-[10%] rounded-full" />
         </div>
       </div>
     </div>)

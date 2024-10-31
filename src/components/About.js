@@ -24,15 +24,15 @@ export default function About() {
   return (
     <div className="relative min-h-screen bg-black flex flex-col md:flex-row items-center justify-center px-4 md:px-12 overflow-hidden">
       {/* Left Section */}
-      <div className="relative z-10 w-full md:w-3/5 flex flex-col justify-center space-y-4 text-white mb-8 md:mb-0">
+      <div className="relative z-10 w-full md:w-3/5 flex flex-col justify-center space-y-20 text-white mb-8 md:mb-0">
         <motion.h1
           ref={titleRef}
           initial="hidden"
           animate={isTitleInView ? "visible" : "hidden"}
           variants={fadeIn}
-          className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight text-center md:text-left"
+          className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center md:text-left text-[#9B1B21]"
         >
-          About Us
+          Unleash the power of innovation in the vaults of HackVerse, where the heist meets technology
         </motion.h1>
         <motion.p
           ref={textRef1}
@@ -42,9 +42,7 @@ export default function About() {
           transition={{ duration: 1, delay: 0.3, ease: "easeInOut" }}
           className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center md:text-left px-2 sm:px-6 md:px-0"
         >
-          We’re committed to crafting exceptional solutions that bring value to
-          our users and partners. Our focus on innovation, quality, and design
-          excellence has been the cornerstone of our success.
+Join us at HackVerse, a platform that celebrates the power of enthusiastic minds to ideate innovative solutions for complex issues across India. It all started with a vision to bring together like-minded hackers to our alma mater in NITK Surathkal, and we're thrilled to be the pioneers of this unique initiative.
         </motion.p>
         <motion.p
           ref={textRef2}
@@ -52,10 +50,9 @@ export default function About() {
           animate={isText2InView ? "visible" : "hidden"}
           variants={fadeIn}
           transition={{ duration: 1, delay: 0.6, ease: "easeInOut" }}
-          className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center md:text-left px-2 sm:px-6 md:px-0"
+          className="text-base pt-4 sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center md:text-left px-2 sm:px-6 md:px-0"
         >
-          Join us on a journey of creativity and growth as we continue to
-          redefine the possibilities of technology and design.
+Be a part of an experience that celebrates innovation and provides developers with the opportunity to showcase their potential to the fullest. Get inspired by industry leaders through engaging keynotes and workshops.
         </motion.p>
       </div>
 
