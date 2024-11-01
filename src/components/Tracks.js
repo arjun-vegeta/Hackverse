@@ -6,11 +6,16 @@ import { CanvasRevealEffect } from "./ui/canvas-reveal-effect";
 export function CanvasRevealEffectDemo() {
   return (
     <div className="relative overflow-hidden z-10 min-h-screen">
-      {/* Background overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url('/bg_prof.JPG')" }}
-      />
+<div
+  className="absolute inset-0 z-10"
+  style={{
+    backgroundImage: `url('/bg_prof.JPG')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed'
+  }}
+></div>
+
 
       {/* Title Container */}
       <div className="relative flex justify-center items-start pt-8 md:pt-20 z-20 w-full">
@@ -21,12 +26,9 @@ export function CanvasRevealEffectDemo() {
 
       {/* Cards Section */}
       <div className="relative flex items-center justify-start min-h-screen pt-20 md:pt-0 pb-20">
-      <div className="relative w-full max-w-7xl mx-auto 
-  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-10 
-  px-4 md:px-8 z-20 
-  md:ml-[10%] md:mr-0 w-[80%] 
-  justify-items-center">
+        <div className="relative w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-10 px-4 md:px-8 z-20 md:ml-[10%] md:mr-0 w-[80%] justify-items-center">
           
+          {/* Card Components */}
           <Card title="Taj Mahal Heist" icon={<AceternityIcon />}>
             <CanvasRevealEffect
               animationSpeed={3}
@@ -37,9 +39,7 @@ export function CanvasRevealEffectDemo() {
               ]}
               dotSize={2}
             />
-            <div
-              className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90"
-            />
+            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
           </Card>
 
           <Card title="White House Heist" icon={<AceternityIcon />}>
@@ -52,7 +52,6 @@ export function CanvasRevealEffectDemo() {
               ]}
             />
           </Card>
-
           <Card title="Taj Mahal Heist" icon={<AceternityIcon />}>
             <CanvasRevealEffect
               animationSpeed={3}
@@ -63,9 +62,7 @@ export function CanvasRevealEffectDemo() {
               ]}
               dotSize={2}
             />
-            <div
-              className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90"
-            />
+            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
           </Card>
 
           <Card title="White House Heist" icon={<AceternityIcon />}>
