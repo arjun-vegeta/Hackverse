@@ -7,6 +7,7 @@ import StatsSection from "./components/StatsSection";
 import StickyScrollSection from "./components/Prizes";
 import { TimelineDemo } from "./components/Timeline";
 import { CanvasRevealEffectDemo } from "./components/Tracks";
+import Sponsor from "./components/Sponsor";
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
       <About />
       <StatsSection />
       <StickyScrollSection />
-      <TimelineDemo />
       <CanvasRevealEffectDemo />
+      <TimelineDemo />
+      <Sponsor />
 
       {/* Add other sections like PRIZES, TRACKS, etc. */}
     </div>

@@ -10,10 +10,10 @@ const STATS_DATA = [
 
 const BackgroundText = React.memo(() => {
   return (
-    <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-transparent opacity-60 -translate-x-36 ">
+    <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-[#434343] opacity-60 -translate-x-36 ">
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -23,7 +23,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "1px " }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -33,7 +33,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -43,7 +43,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -53,7 +53,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -63,7 +63,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -73,7 +73,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -83,7 +83,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -93,7 +93,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -103,7 +103,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -113,7 +113,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -123,7 +123,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -133,7 +133,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -143,7 +143,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -153,7 +153,7 @@ const BackgroundText = React.memo(() => {
       </motion.div>
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
-        style={{ WebkitTextStroke: "1px red" }}
+        style={{ WebkitTextStroke: "0px red" }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 0.6, y: 0 }}
         viewport={{ once: true }}
@@ -177,7 +177,7 @@ const StatItem = React.memo(({ number, label, delay }) => (
     viewport={{ once: true }}
     transition={{ delay, duration: 0.5, ease: "easeOut" }}
   >
-    <h2 className="text-6xl font-bold">{number}</h2>
+    <h2 className="text-6xl text-[#a9252c] font-bold">{number}</h2>
     <p className="text-xl">{label}</p>
   </motion.div>
 ));
@@ -201,7 +201,7 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center bg-black text-white overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center bg-[#000000] text-white overflow-hidden">
       <BackgroundText />
 
       <motion.h1

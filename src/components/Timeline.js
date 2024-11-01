@@ -2,190 +2,6 @@ import React from "react";
 import { Timeline } from "./ui/timeline";
 import { motion } from "framer-motion";
 
-// BackgroundText component as defined earlier
-// const BackgroundText = React.memo(() => {
-//   return (
-//     <div className="absolute inset-0 w-full h-full overflow-hidden flex flex-col text-transparent opacity-40">
-//       {Array.from({ length: 15 }).map((_, index) => (
-//         <motion.div
-//           key={index}
-//           className="text-[96px] whitespace-nowrap font-black tracking-widest"
-//           style={{ 
-//             WebkitTextStroke: "1px red",
-//             // Randomized translateX for each line within the range of -150px to 150px
-//             transform: `translateX(${Math.floor(Math.random() * 4000 - 1500)}px)`,
-//           }}
-//           initial={{ opacity: 0, y: 30 }}
-//           whileInView={{ opacity: 0.6, y: 0 }}
-//           viewport={{ once: true }}
-//           transition={{ duration: 1, ease: "easeOut", delay: index * 0.05 }}
-//         >
-//           timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-//         </motion.div>
-//       ))}
-//     </div>
-//   );
-// });
-
-const BackgroundText = React.memo(() => {
-    return (
-      <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-transparent opacity-60 -translate-x-36 ">
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.05 }}
-        >
-          &nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.15 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-        >
-          &nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.25 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-        >
-          &nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.35 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.45 }}
-        >
-          &nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.55 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-        >
-          &nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.65 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
-        >
-          &nbsp;&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline&nbsp;&nbsp;timeline
-        </motion.div>
-      </div>
-    );
-  });
-
-BackgroundText.displayName = 'BackgroundText';
-
 export function TimelineDemo() {
   const data = [
     {
@@ -302,11 +118,21 @@ export function TimelineDemo() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center bg-black text-white overflow-hidden">
-      {/* Add the BackgroundText component here */}
-      <BackgroundText />
+      {/* Add the dot background */}
+      <div className="absolute inset-0 w-full h-full bg-black" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'dot-pattern\' patternUnits=\'userSpaceOnUse\' width=\'30\' height=\'30\'%3E%3Ccircle cx=\'15\' cy=\'15\' r=\'2\' fill=\'%23666\' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'100\' height=\'100\' fill=\'url(%23dot-pattern)\' /%3E%3C/svg%3E")' }}></div>
+  
+      {/* Add the timeline background on top of dots */}
+      <div className="absolute inset-0 w-full h-full bg-center bg-cover" style={{ backgroundImage: 'url("/bg-timeline.png")' }}></div>
+  
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
+  
+      <div className="relative z-10 max-w-7xl mx-auto pt-10 pb-[-5] px-4 md:px-8 lg:px-0">
+        <h2 className="text-4xl md:text-6xl mt-4 -mb-44 font-bold text-[#9b1b21] dark:text-[#9b1b21] max-w-4xl">
+          Heist Timeline
+        </h2>
+      </div>
       
       <Timeline data={data} />
     </section>
   );
 }
-

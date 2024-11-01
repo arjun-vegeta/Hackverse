@@ -152,7 +152,7 @@ const StickyScrollSection = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="flex h-[310vh] bg-black text-white relative">
+    <div ref={sectionRef} className="flex h-[310vh] bg-[#080808] text-white relative">
       <div 
         className="w-1/3 flex items-center justify-center h-screen transform-gpu"
         style={{
