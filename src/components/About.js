@@ -4,7 +4,6 @@ import { LampDemo } from "./ui/lamp";
 import { motion, useInView } from "framer-motion";
 
 export default function About() {
-
   const screenWidth = window.innerWidth;
 
   const titleRef = useRef(null);
@@ -38,7 +37,6 @@ export default function About() {
           },
         }
       : { opacity: 1 }, // No flickering if not in view
-
   };
 
   const fadeIn = {
@@ -86,16 +84,16 @@ export default function About() {
     >
       {/* Left Section */}
       <div className="relative z-10 w-full md:w-3/5 flex flex-col justify-center space-y-8 md:space-y-20 text-white mb-8 md:mb-0">
-      <motion.h1
-  ref={titleRef}
-  initial="hidden"
-  animate={isTitleInView ? "visible" : "hidden"}
-  variants={fadeIn}
-  className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center md:text-left uppercase text-[#ffffff] mt-10"
-  style={{ lineHeight: "1.5" }}
->
-  Unleash the power of innovation in the vaults of HackVerse, <span className="bg-[#7B181D] px-4 pb-2">where the heist meets technology</span>
-</motion.h1>
+        <motion.h1
+          ref={titleRef}
+          initial="hidden"
+          animate={isTitleInView ? "visible" : "hidden"}
+          variants={fadeIn}
+          className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center md:text-left uppercase text-[#ffffff] mt-10"
+          style={{ lineHeight: "1.5" }}
+        >
+          Unleash the power of innovation in the vaults of HackVerse, <span className="bg-[#7B181D] px-4 pb-2">where the heist meets technology</span>
+        </motion.h1>
 
         <motion.p
           ref={textRef1}
@@ -127,7 +125,7 @@ export default function About() {
           className="absolute inset-0 flex items-center justify-center z-0"
           variants={horrorFlicker}
           initial="initial"
-          animate={horrorFlicker.animate}
+          animate={isFlickering ? "animate" : "initial"}
           style={{ transform: "translateY(-44px)" }}
         >
           <LampDemo />
@@ -149,8 +147,8 @@ export default function About() {
             className="w-96 sm:w-32 md:w-auto h-auto object-contain"
             variants={horrorFlicker}
             initial="initial"
-            animate={horrorFlicker.animate}
-            style={screenWidth < 768 ? {transform: "translateY(-50px)"} : {}}
+            animate={isFlickering ? "animate" : "initial"}
+            style={screenWidth < 768 ? { transform: "translateY(-50px)" } : {}}
           />
         </motion.div>
       </div>

@@ -103,7 +103,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Links and Copyright */}
-      <div className="container mx-auto text-center mt-8 space-y-2">
+      <div className="container mx-auto text-center mt-8 space-y-2 border-t-2 pt-3 border-white">
         <p>
           <a href="https://devfolio.co/code-of-conduct" target="_blank" rel="noopener noreferrer" className="text-[#9B1B21] hover:underline">
             Code of Conduct

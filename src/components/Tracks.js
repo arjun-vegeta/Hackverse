@@ -5,7 +5,7 @@ import { CanvasRevealEffect } from "./ui/canvas-reveal-effect";
 
 export function CanvasRevealEffectDemo() {
   return (
-    <div className="relative overflow-hidden z-10 min-h-screen">
+    <div className="relative overflow-hidden bg-black z-10 min-h-screen">
 <div
   className="absolute inset-0 z-10"
   style={{

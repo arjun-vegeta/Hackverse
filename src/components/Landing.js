@@ -140,7 +140,7 @@ const Landing = () => {
             </div>
 
             {/* Red Line */}
-            <div className="absolute h-full w-0.5 bg-red-700 right-0 top-0 mr-1" /> 
+            <div className="absolute h-full w-0.5 bg-red-700 right-0 top-0 mr-3" /> 
           </motion.div>
         </div>
       </motion.div>

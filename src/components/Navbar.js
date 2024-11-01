@@ -76,10 +76,10 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="fixed bg-black border-black bg-opacity-100 backdrop-blur-xl top-0 z-50 h-max w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
+    <nav className="fixed bg-black border-black bg-opacity-100 backdrop-blur-xl top-0 z-50 h-max w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 shadow-md shadow-[#7b181da5]">
       <div className="flex justify-between items-center text-white">
         <a href="/" className="text-2xl font-bold">
-          <img src="/logo.png" alt="Logo" className="h-10 ml-5" />
+          <img src="/logo.png" alt="Logo" className="h-10 w-auto ml-5" />
         </a>
         <div className="hidden lg:block">{navList}</div>
         <div className="lg:hidden">
