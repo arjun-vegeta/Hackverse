@@ -7,7 +7,7 @@ const teamMembers = [
   {
     name: "John Doe",
     short_desc: "Full Stack Developer",
-    image: "/person.jpg",
+    image: "/person.png",
     twitter_url: "https://twitter.com/johndoe",
     github_url: "https://github.com/johndoe",
     linkedin_url: "https://linkedin.com/in/johndoe",
@@ -15,7 +15,7 @@ const teamMembers = [
   {
     name: "Jane Smith",
     short_desc: "UI/UX Designer",
-    image: "/person.jpg",
+    image: "/person.png",
     twitter_url: "https://twitter.com/janesmith",
     github_url: "https://github.com/janesmith",
     linkedin_url: "https://linkedin.com/in/janesmith",
@@ -23,7 +23,7 @@ const teamMembers = [
   {
     name: "Alice Johnson",
     short_desc: "Data Scientist",
-    image: "/person.jpg",
+    image: "/person.png",
     twitter_url: "https://twitter.com/alicejohnson",
     github_url: "https://github.com/alicejohnson",
     linkedin_url: "https://linkedin.com/in/alicejohnson",
@@ -31,7 +31,7 @@ const teamMembers = [
   {
     name: "Bob Brown",
     short_desc: "DevOps Engineer",
-    image: "/person.jpg",
+    image: "/person.png",
     twitter_url: "https://twitter.com/bobbrown",
     github_url: "https://github.com/bobbrown",
     linkedin_url: "https://linkedin.com/in/bobbrown",
@@ -39,7 +39,7 @@ const teamMembers = [
   {
     name: "Carol White",
     short_desc: "Machine Learning Engineer",
-    image: "/person.jpg",
+    image: "/person.png",
     twitter_url: "https://twitter.com/carolwhite",
     github_url: "https://github.com/carolwhite",
     linkedin_url: "https://linkedin.com/in/carolwhite",
@@ -47,7 +47,7 @@ const teamMembers = [
   {
     name: "David Black",
     short_desc: "Cloud Architect",
-    image: "/person.jpg",
+    image: "/person.png",
     twitter_url: "https://twitter.com/davidblack",
     github_url: "https://github.com/davidblack",
     linkedin_url: "https://linkedin.com/in/davidblack",
@@ -55,7 +55,7 @@ const teamMembers = [
   {
     name: "Eve Green",
     short_desc: "Frontend Developer",
-    image: "/person.jpg",
+    image: "/person.png",
     twitter_url: "https://twitter.com/evegreen",
     github_url: "https://github.com/evegreen",
     linkedin_url: "https://linkedin.com/in/evegreen",
@@ -63,7 +63,7 @@ const teamMembers = [
   {
     name: "Frank Blue",
     short_desc: "Backend Developer",
-    image: "/person.jpg",
+    image: "/person.png",
     twitter_url: "https://twitter.com/frankblue",
     github_url: "https://github.com/frankblue",
     linkedin_url: "https://linkedin.com/in/frankblue",
@@ -71,7 +71,7 @@ const teamMembers = [
   {
     name: "Grace Yellow",
     short_desc: "Product Manager",
-    image: "/person.jpg",
+    image: "/person.png",
     twitter_url: "https://twitter.com/graceyellow",
     github_url: "https://github.com/graceyellow",
     linkedin_url: "https://linkedin.com/in/graceyellow",
@@ -79,7 +79,7 @@ const teamMembers = [
   {
     name: "John Doe",
     short_desc: "Full Stack Developer",
-    image: "/person.jpg",
+    image: "/person.png",
     twitter_url: "https://twitter.com/johndoe",
     github_url: "https://github.com/johndoe",
     linkedin_url: "https://linkedin.com/in/johndoe",
@@ -87,7 +87,7 @@ const teamMembers = [
   {
     name: "Jane Smith",
     short_desc: "UI/UX Designer",
-    image: "/person.jpg",
+    image: "/person.png",
     twitter_url: "https://twitter.com/janesmith",
     github_url: "https://github.com/janesmith",
     linkedin_url: "https://linkedin.com/in/janesmith",
@@ -95,7 +95,7 @@ const teamMembers = [
   {
     name: "John Doe",
     short_desc: "Full Stack Developer",
-    image: "/person.jpg",
+    image: "/person.png",
     twitter_url: "https://twitter.com/johndoe",
     github_url: "https://github.com/johndoe",
     linkedin_url: "https://linkedin.com/in/johndoe",
@@ -107,8 +107,8 @@ export const HoverEffect = ({ items, className }) => {
 
   return (
     <div className="flex justify-center w-full">
-      <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-28 gap-y-20 py-10 max-w-7xl", className)}>
-        {teamMembers.map((item, idx) => (
+<div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-4 md:gap-x-20 md:gap-y-16 lg:gap-x-28 lg:gap-y-20 py-10 max-w-7xl", className)}>
+{teamMembers.map((item, idx) => (
           <div
             key={idx}
             className="relative group block p-2 h-full w-full max-w-[320px] mx-auto"

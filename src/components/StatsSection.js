@@ -177,8 +177,8 @@ const StatItem = React.memo(({ number, label, delay }) => (
     viewport={{ once: true }}
     transition={{ delay, duration: 0.5, ease: "easeOut" }}
   >
-    <h2 className="text-6xl text-[#a9252c] font-bold uppercase">{number}</h2>
-    <p className="text-xl uppercase">{label}</p>
+    <h2 className="text-4xl md:text-6xl text-[#a9252c] font-bold uppercase">{number}</h2>
+    <p className="text-lg md:text-xl uppercase">{label}</p>
   </motion.div>
 ));
 

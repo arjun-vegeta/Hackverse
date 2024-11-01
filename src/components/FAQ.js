@@ -64,7 +64,6 @@ const FAQ = () => {
     }
   ];
 
-  // Split faqs array into two halves for the grid
   const midpoint = Math.ceil(faqs.length / 2);
   const leftColumnFaqs = faqs.slice(0, midpoint);
   const rightColumnFaqs = faqs.slice(midpoint);
@@ -72,12 +71,11 @@ const FAQ = () => {
   return (
     <div className="min-h-screen bg-black py-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
-      <h1 className="text-5xl md:text-6xl font-bold text-white text-center mb-16">
+      <h1 className="text-4xl md:text-6xl font-bold text-white text-center mb-16">
   <span className="leading-normal block mb-2">CLEAR YOUR DOUBTS FOR THE HEIST </span>
   <span className="bg-[#7B181D] px-4 pb-2 inline-block">EXPLORE OUR FAQS</span>
 </h1>
 
-        {/* Grid container */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column */}
           <div className="space-y-6">
@@ -127,7 +125,7 @@ const FAQ = () => {
               href="http://t.me/hackverse" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-red-600 hover:text-red-400 transition-colors duration-200"
+              className="text-[#9B1B21] hover:text-red-400 underline transition-colors duration-200"
             >
               Join our Telegram Channel
             </a>

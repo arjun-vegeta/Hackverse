@@ -85,7 +85,7 @@ export default function About() {
       className="relative min-h-screen bg-[#000000] flex flex-col md:flex-row items-center justify-center px-4 md:px-12 overflow-hidden"
     >
       {/* Left Section */}
-      <div className="relative z-10 w-full md:w-3/5 flex flex-col justify-center space-y-20 text-white mb-8 md:mb-0">
+      <div className="relative z-10 w-full md:w-3/5 flex flex-col justify-center space-y-8 md:space-y-20 text-white mb-8 md:mb-0">
       <motion.h1
   ref={titleRef}
   initial="hidden"

@@ -8,7 +8,17 @@ const fadeIn = {
 
 const Landing = () => {
   const handleScroll = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(id);
+    const offset = 64;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
   };
 
   const landingRef = useRef(null);
@@ -20,11 +30,11 @@ const Landing = () => {
       initial="hidden"
       animate={isLandingInView ? "visible" : "hidden"}
       variants={fadeIn}
-      className="w-full h-screen relative flex"
+      className="w-full h-screen relative flex flex-col lg:flex-row pt-14 lg:pt-16 overflow-hidden" 
     >
-      {/* Left Section */}
+      {/* Left Section - Full width on mobile */}
       <motion.div
-        className="w-[60%] flex items-center justify-end flex-col relative bg-[#481516]"
+        className="w-full lg:w-[60%] flex items-center justify-end flex-col relative bg-[#481516] h-screen"
       >
         {/* SVG positioned on the left */}
         <motion.div
@@ -62,7 +72,7 @@ const Landing = () => {
 
         {/* Main Heading */}
         <motion.div
-          className="absolute left-[100px] top-0 text-[#dadada] ml-0 mt-10"
+          className="absolute left-4 lg:left-[100px] top-0 text-[#dadada] mt-10"
           variants={fadeIn}
         >
           <p className="font-bold">HEIST COMING SOON...</p>
@@ -74,35 +84,70 @@ const Landing = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isLandingInView ? { opacity: 1, scale: 1, transition: { delay: 0.8, duration: 1 } } : { opacity: 0, scale: 0.9 }}
         >
-          <img src="svgs/text.svg" alt="" className="w-[75%] object-cover" />
+          <img src="svgs/text.svg" alt="" className="w-[85%] lg:w-[75%] object-cover" />
         </motion.div>
 
-        {/* Navigation Menu */}
-        <motion.div
-  className="flex flex-col items-end text-xl font-bold w-full mr-10 relative"
-  variants={fadeIn}
->
-  <div className="flex flex-col mr-5 items-end">
-    {['HOME', 'ABOUT', 'PRIZES', 'JUDGES & SPEAKERS', 'TRACKS', 'TIMELINE', 'SPONSORS'].map((item) => (
-      <button
-        key={item}
-        className="hover:underline cursor-pointer mb-3 text-[#dadada]"
-        onClick={() => handleScroll(item.toLowerCase())}
-      >
-        {item}
-      </button>
-    ))}
-  </div>
+        {/* Navigation Container */}
+        <div className="absolute bottom-0 right-0 h-fit w-full">
+          {/* Navigation Menu */}
+          <motion.div
+            className="relative flex flex-col items-end text-lg lg:text-xl font-bold w-full px-4 pb-8 lg:pb-16 z-10"
+            variants={fadeIn}
+          >
+            <div className="flex flex-col items-end mr-5">
+              <button
+                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
+                onClick={() => handleScroll('about')}
+              >
+                ABOUT
+              </button>
+              <button
+                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
+                onClick={() => handleScroll('prizes')}
+              >
+                PRIZES
+              </button>
+              <button
+                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
+                onClick={() => handleScroll('speakers-judges')}
+              >
+                JUDGES & SPEAKERS
+              </button>
+              <button
+                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
+                onClick={() => handleScroll('tracks')}
+              >
+                TRACKS
+              </button>
+              <button
+                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
+                onClick={() => handleScroll('timeline')}
+              >
+                TIMELINE
+              </button>
+              <button
+                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
+                onClick={() => handleScroll('sponsors')}
+              >
+                SPONSORS
+              </button>
+              <button
+                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
+                onClick={() => handleScroll('faq')}
+              >
+                FAQS
+              </button>
+            </div>
 
-  {/* Red Line with 100% height to be fully visible */}
-  <div className="absolute h-full w-0.5 bg-red-700 right-0 top-0 mt-4 transform -translate-y-4" /> 
-</motion.div>
-
+            {/* Red Line */}
+            <div className="absolute h-full w-0.5 bg-red-700 right-0 top-0 mr-1" /> 
+          </motion.div>
+        </div>
       </motion.div>
 
-      {/* Right Section with Image */}
+      {/* Right Section with Image - Hidden on mobile */}
       <motion.div
-        className="w-[40%] flex items-center justify-end bg-black"
+        className="hidden lg:flex w-[40%] items-center justify-end bg-black"
         variants={fadeIn}
       >
         <div className="w-[80%] mb-20">

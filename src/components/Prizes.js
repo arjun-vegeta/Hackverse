@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 
-const screenWidth = window.innerWidth;
-
-// Separate SVG components for better performance
 const RotatingSVG = React.memo(({ rotation }) => (
   <svg 
     width="1200" 
@@ -60,9 +57,11 @@ const StaticSVG = React.memo(() => (
 ));
 
 const ContentSection = React.memo(({ title, description }) => (
-  <div className="h-screen flex flex-col justify-center text-center md:text-right md:mb-22">
-      <h2 style={{ backgroundColor: `${screenWidth < 768 ? 'rgba(155, 27, 33, 0.4)' : ''}` }} className="text-4xl md:text-6xl text-[#9B1B21] font-bold">{title}</h2>
-      <p style={{ backgroundColor: `${screenWidth < 768 ? 'rgba(155, 27, 33, 0.4)' : ''}` }} className="text-2xl md:text-4xl whitespace-pre-line pt-16 md:pt-32">{description}</p>
+  <div className="h-screen flex flex-col justify-center text-right md:mb-22">
+    <h2 className="inline-block text-4xl md:text-6xl px-4 pb-2 text-white font-bold">
+      <span className="bg-[#7B181D] px-4 pb-2">{title}</span>
+    </h2>
+    <p className="text-2xl md:text-4xl whitespace-pre-line pt-16 md:pt-32">{description}</p>
   </div>
 ));
 
@@ -82,11 +81,11 @@ const StickyScrollSection = () => {
     },
     {
       title: "SPECIAL PRIZES",
-      description: "This is the description for the second section. More content to scroll through."
+      description: "This is the description for the second section. More content to scroll through"
     },
     {
       title: "PARTICIPATION PRIZES",
-      description: "This is the description for the third section. Keep adding as much text as needed."
+      description: "This is the description for the third section. Keep adding as much text as needed"
     }
   ], []);
 
@@ -150,19 +149,33 @@ const StickyScrollSection = () => {
     };
   }, []);
 
+  const mobileDotPattern = `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='dot-pattern' patternUnits='userSpaceOnUse' width='30' height='30'%3E%3Ccircle cx='15' cy='15' r='2' fill='white' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23dot-pattern)' /%3E%3C/svg%3E")`;
+  
+  const desktopDotPattern = `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='dot-pattern' patternUnits='userSpaceOnUse' width='30' height='30'%3E%3Ccircle cx='15' cy='15' r='2' fill='%23666' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23dot-pattern)' /%3E%3C/svg%3E")`;
+
   return (
     <div ref={sectionRef} className="flex h-[310vh] bg-[#080808] text-white relative">
       {/* Dot background with radial fade */}
       <div
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full hidden md:block"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='dot-pattern' patternUnits='userSpaceOnUse' width='30' height='30'%3E%3Ccircle cx='15' cy='15' r='2' fill='%23666' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23dot-pattern)' /%3E%3C/svg%3E")`,
+          backgroundImage: desktopDotPattern,
+          maskImage: "radial-gradient(ellipse at center, black, transparent 70%)",
+          WebkitMaskImage: "radial-gradient(ellipse at center, black, transparent 70%)"
+        }}
+      />
+      
+      {/* Mobile dot background */}
+      <div
+        className="absolute inset-0 w-full h-full md:hidden"
+        style={{
+          backgroundImage: mobileDotPattern,
           maskImage: "radial-gradient(ellipse at center, black, transparent 70%)",
           WebkitMaskImage: "radial-gradient(ellipse at center, black, transparent 70%)"
         }}
       />
 
-      {/* Additional radial fade for the black background */}
+      {/* extra radial fade for the black background */}
       <div
         className="absolute inset-0 w-full h-full bg-[#080808]"
         style={{
@@ -181,14 +194,21 @@ const StickyScrollSection = () => {
           left: '0',
         }}
       >
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-          <RotatingSVG rotation={rotation} />
-        </div>
+        {/* Layer 1: Static SVG */}
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
           <StaticSVG />
         </div>
+        
+        {/* Layer 2: Rotating SVG */}
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+          <RotatingSVG rotation={rotation} />
+        </div>
+        
+        {/* Layer 3: Black overlay (mobile only) */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70 md:hidden" />
       </div>
 
+      {/* Layer 4: Content */}
       <div className="w-full md:w-2/3 md:relative ml-auto px-4 md:px-8 py-16 relative z-10">
         {contentSections.map((section, index) => (
           <ContentSection

@@ -12,23 +12,21 @@ export function CanvasRevealEffectDemo() {
         style={{ backgroundImage: "url('/bg_prof.JPG')" }}
       />
 
-      <div className="relative flex items-center justify-start min-h-screen py-20">
-        {/* Title */}
-        <h1
-  className="absolute top-8 left-1/2 transform -translate-x-1/2 md:top-20 text-[#ffffff] text-4xl md:text-6xl font-bold z-20"
->
-CHOOSE YOUR <span className="bg-[#7B181D] px-4 pb-2">HEIST</span>
-</h1>
+      {/* Title Container */}
+      <div className="relative flex justify-center items-start pt-8 md:pt-20 z-20 w-full">
+        <h1 className="text-[#ffffff] text-3xl md:text-6xl font-bold whitespace-nowrap">
+          CHOOSE YOUR <span className="bg-[#7B181D] px-4 pb-2">HEIST</span>
+        </h1>
+      </div>
 
-        {/* Cards Section */}
-        <div className="relative w-full max-w-7xl mx-auto 
-          grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 
-          px-4 md:px-8 z-20 
-          md:ml-[10%] md:mr-0 :w-[80%] 
-          justify-items-center">
-          <Card title="London Bank Heist" icon={<AceternityIcon />}>
-            <CanvasRevealEffect animationSpeed={5.1} containerClassName="bg-emerald-900" />
-          </Card>
+      {/* Cards Section */}
+      <div className="relative flex items-center justify-start min-h-screen pt-20 md:pt-0 pb-20">
+      <div className="relative w-full max-w-7xl mx-auto 
+  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-10 
+  px-4 md:px-8 z-20 
+  md:ml-[10%] md:mr-0 w-[80%] 
+  justify-items-center">
+          
           <Card title="Taj Mahal Heist" icon={<AceternityIcon />}>
             <CanvasRevealEffect
               animationSpeed={3}
@@ -43,6 +41,7 @@ CHOOSE YOUR <span className="bg-[#7B181D] px-4 pb-2">HEIST</span>
               className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90"
             />
           </Card>
+
           <Card title="White House Heist" icon={<AceternityIcon />}>
             <CanvasRevealEffect
               animationSpeed={3}
@@ -53,8 +52,31 @@ CHOOSE YOUR <span className="bg-[#7B181D] px-4 pb-2">HEIST</span>
               ]}
             />
           </Card>
-          <Card title="NITK Heist" icon={<AceternityIcon />}>
-            <CanvasRevealEffect animationSpeed={5.1} containerClassName="bg-emerald-900" />
+
+          <Card title="Taj Mahal Heist" icon={<AceternityIcon />}>
+            <CanvasRevealEffect
+              animationSpeed={3}
+              containerClassName="bg-black"
+              colors={[
+                [236, 72, 153],
+                [232, 121, 249],
+              ]}
+              dotSize={2}
+            />
+            <div
+              className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90"
+            />
+          </Card>
+
+          <Card title="White House Heist" icon={<AceternityIcon />}>
+            <CanvasRevealEffect
+              animationSpeed={3}
+              containerClassName="bg-black"
+              colors={[
+                [236, 72, 153],
+                [232, 121, 249],
+              ]}
+            />
           </Card>
         </div>
       </div>
@@ -68,7 +90,7 @@ const Card = ({ title, icon, children }) => {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border border-[#a9252c] group/canvas-card flex items-center justify-center dark:border-[#a9252c] w-full p-4 relative aspect-[2/3] h-[280px] sm:h-[320px] lg:h-[400px]"
+      className="border border-[#a9252c] group/canvas-card flex items-center justify-center dark:border-[#a9252c] w-[70%] sm:w-full p-4 relative aspect-[2/3] h-[280px] sm:h-[320px] lg:h-[400px] mb-4 sm:mb-0"
     >
       <Icon className="absolute h-4 w-4 md:h-6 md:w-6 -top-3 -left-3 dark:text-white text-white" />
       <Icon className="absolute h-4 w-4 md:h-6 md:w-6 -bottom-3 -left-3 dark:text-white text-white" />
@@ -100,12 +122,12 @@ const Card = ({ title, icon, children }) => {
 const AceternityIcon = () => {
   return (
     <svg
-      width="66"
-      height="65"
+      width="40" 
+      height="40" 
       viewBox="0 0 66 65"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-10 w-10 text-[#ffffff] dark:text-white group-hover/canvas-card:text-white"
+      className="h-8 w-8 sm:h-10 sm:w-10 text-[#ffffff] dark:text-white group-hover/canvas-card:text-white"
     >
       <path
         d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"

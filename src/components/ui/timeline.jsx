@@ -54,7 +54,7 @@ export const Timeline = ({
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
               <h3
-                className="md:hidden block text-2xl mb-4 text-left font-bold text-gray-200 dark:text-gray-200">
+                className="md:hidden block text-2xl mb-4 text-left font-bold text-[#9b1b21] dark:text-[#9b1b21]">
                 {item.title}
               </h3>
               {item.content}{" "}

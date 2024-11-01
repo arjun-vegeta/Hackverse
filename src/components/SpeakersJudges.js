@@ -12,7 +12,7 @@ export function SpeakersJudges() {
         }}
       ></div>
 
-      {/* Additional radial fade for the black background */}
+      {/* extra radial fade for the black background */}
       <div
         className="absolute inset-0 w-full h-full bg-black"
         style={{
@@ -23,7 +23,7 @@ export function SpeakersJudges() {
 
       {/* Content */}
       <div className="relative text-white text-center z-10">
-        <h1 className="font-bold text-6xl">
+        <h1 className="font-bold text-4xl md:text-6xl">
           SPEAKERS & <span className="bg-[#7B181D] px-4 pb-2">JUDGES</span>
         </h1>
       </div>
