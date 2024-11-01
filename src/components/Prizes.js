@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 
+const screenWidth = window.innerWidth;
+
 // Separate SVG components for better performance
 const RotatingSVG = React.memo(({ rotation }) => (
   <svg 
@@ -58,9 +60,9 @@ const StaticSVG = React.memo(() => (
 ));
 
 const ContentSection = React.memo(({ title, description }) => (
-  <div className="h-screen flex flex-col justify-center space-y-32 pr-20 text-right">
-    <h2 className="text-6xl text-[#9B1B21] font-bold">{title}</h2>
-    <p className="text-4xl whitespace-pre-line">{description}</p>
+  <div className="h-screen flex flex-col justify-center text-center md:text-right md:mb-22">
+      <h2 style={{ backgroundColor: `${screenWidth < 768 ? 'rgba(155, 27, 33, 0.4)' : ''}` }} className="text-4xl md:text-6xl text-[#9B1B21] font-bold">{title}</h2>
+      <p style={{ backgroundColor: `${screenWidth < 768 ? 'rgba(155, 27, 33, 0.4)' : ''}` }} className="text-2xl md:text-4xl whitespace-pre-line pt-16 md:pt-32">{description}</p>
   </div>
 ));
 
@@ -171,7 +173,7 @@ const StickyScrollSection = () => {
       />
 
       <div 
-        className="w-1/3 flex items-center justify-center h-screen transform-gpu"
+        className="w-full md:w-1/3 md:relative flex items-center justify-center h-screen transform-gpu"
         style={{
           position: stickyPosition,
           top: stickyPosition === 'fixed' ? '50%' : '0',
@@ -187,7 +189,7 @@ const StickyScrollSection = () => {
         </div>
       </div>
 
-      <div className="w-2/3 ml-auto px-8 py-16 relative z-10">
+      <div className="w-full md:w-2/3 md:relative ml-auto px-4 md:px-8 py-16 relative z-10">
         {contentSections.map((section, index) => (
           <ContentSection
             key={index}
