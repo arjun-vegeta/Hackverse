@@ -170,7 +170,7 @@ const Sponsor = () => {
 
       {/* Foreground Content */}
       <div className="relative z-10 text-center container mx-auto" id="sponsor">
-        <h1 className="text-center text-6xl font-extrabold mb-4 text-[#9b1b21]">SPONSORS</h1>
+        <h1 className="text-center text-6xl font-extrabold mb-10 text-[#ffffff]"><span className="bg-[#7B181D] px-4 pb-2">SPONSORS</span></h1>
 
         <p className="text-center text-white mb-6">
           <strong>Interested in sponsoring?</strong> Contact us at{' '}

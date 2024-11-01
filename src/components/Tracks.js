@@ -14,9 +14,11 @@ export function CanvasRevealEffectDemo() {
 
       <div className="relative flex items-center justify-start min-h-screen py-20">
         {/* Title */}
-        <h1 className="absolute top-8 left-6 md:top-20 md:left-20 text-[#a9252c] text-4xl md:text-6xl font-bold z-20">
-          HEISTS
-        </h1>
+        <h1
+  className="absolute top-8 left-1/2 transform -translate-x-1/2 md:top-20 text-[#ffffff] text-4xl md:text-6xl font-bold z-20"
+>
+CHOOSE YOUR <span className="bg-[#7B181D] px-4 pb-2">HEIST</span>
+</h1>
 
         {/* Cards Section */}
         <div className="relative w-full max-w-7xl mx-auto 
@@ -103,7 +105,7 @@ const AceternityIcon = () => {
       viewBox="0 0 66 65"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-10 w-10 text-[#000000] dark:text-white group-hover/canvas-card:text-white"
+      className="h-10 w-10 text-[#ffffff] dark:text-white group-hover/canvas-card:text-white"
     >
       <path
         d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"

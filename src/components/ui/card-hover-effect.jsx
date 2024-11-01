@@ -1,5 +1,5 @@
 import { cn } from "../../utils/cn";
-import { AnimatePresence, motion, useInView } from "framer-motion"; // Ensure you're importing useInView
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter } from "@tabler/icons-react";
 import { useState, useRef } from "react";
 
@@ -77,66 +77,80 @@ const teamMembers = [
     linkedin_url: "https://linkedin.com/in/graceyellow",
   },
   {
-    name: "Henry Purple",
-    short_desc: "Software Engineer",
+    name: "John Doe",
+    short_desc: "Full Stack Developer",
     image: "/person.jpg",
-    twitter_url: "https://twitter.com/henrypurple",
-    github_url: "https://github.com/henrypurple",
-    linkedin_url: "https://linkedin.com/in/henrypurple",
-  }
+    twitter_url: "https://twitter.com/johndoe",
+    github_url: "https://github.com/johndoe",
+    linkedin_url: "https://linkedin.com/in/johndoe",
+  },
+  {
+    name: "Jane Smith",
+    short_desc: "UI/UX Designer",
+    image: "/person.jpg",
+    twitter_url: "https://twitter.com/janesmith",
+    github_url: "https://github.com/janesmith",
+    linkedin_url: "https://linkedin.com/in/janesmith",
+  },
+  {
+    name: "John Doe",
+    short_desc: "Full Stack Developer",
+    image: "/person.jpg",
+    twitter_url: "https://twitter.com/johndoe",
+    github_url: "https://github.com/johndoe",
+    linkedin_url: "https://linkedin.com/in/johndoe",
+  },
 ];
-
 
 export const HoverEffect = ({ items, className }) => {
   let [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-x-28 gap-y-20 lg:grid-cols-3 py-10", className)}>
-      {teamMembers.map((item, idx) => (
-        <div
-          key={idx}
-          className="relative group block p-2 h-full w-full mx-auto"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                // change here for hover colour
-                className="absolute inset-0 h-full w-full bg-gray-500 dark:bg-slate-800/[0.8] block rounded-3xl"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
-            )}
-          </AnimatePresence>
-          <FadeInCard item={item} />
-        </div>
-      ))}
+    <div className="flex justify-center w-full">
+      <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-28 gap-y-20 py-10 max-w-7xl", className)}>
+        {teamMembers.map((item, idx) => (
+          <div
+            key={idx}
+            className="relative group block p-2 h-full w-full max-w-[320px] mx-auto"
+            onMouseEnter={() => setHoveredIndex(idx)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <AnimatePresence>
+              {hoveredIndex === idx && (
+                <motion.span
+                  className="absolute inset-0 h-full w-full max-w-[320px] bg-red-800 block rounded-3xl"
+                  layoutId="hoverBackground"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    transition: { duration: 0.15 },
+                  }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.15, delay: 0.2 },
+                  }}
+                />
+              )}
+            </AnimatePresence>
+            <FadeInCard item={item} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-// Updated FadeInCard Component
 const FadeInCard = ({ item }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, threshold: 1 });// Check if the card is in view
+  const isInView = useInView(ref, { once: false, threshold: 1 });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, translateY: 20 }} // Initial state for fade-in
-      animate={isInView ? { opacity: 1, translateY: 0 } : {}} // Animate when in view
-      transition={{ duration: 0.5 }} // Duration of the fade-in
-      // change here for card colour
-      className="rounded-2xl h-full w-full p-4 overflow-hidden bg-[#7B181D] border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20"
+      initial={{ opacity: 0, translateY: 20 }}
+      animate={isInView ? { opacity: 1, translateY: 0 } : {}}
+      transition={{ duration: 0.5 }}
+      className="rounded-2xl h-full w-full max-w-[320px] p-4 overflow-hidden bg-[#7B181D] border border-transparent relative z-20"
     >
       <img
         src={item.image}
@@ -145,7 +159,7 @@ const FadeInCard = ({ item }) => {
         width={160}
         height={160}
       />
-      <div className="grid grid-rows-3 h-[190px] md:h-[150px] lg:h-[125px] my-auto mx-auto text-center items-center">
+      <div className="grid grid-rows-3 grid-col-4 h-[190px] md:h-[150px] lg:h-[125px] my-auto mx-auto text-center items-center">
         <CardTitle>{item.name}</CardTitle>
         <CardDescription>{item.short_desc}</CardDescription>
         <div className="w-[70%] flex flex-row mx-auto my-auto justify-center gap-4 md:gap-6 mt-5 text-white">
@@ -185,3 +199,5 @@ export const CardDescription = ({ className, children }) => {
     </p>
   );
 };
+
+export default HoverEffect;

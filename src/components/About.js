@@ -78,19 +78,21 @@ export default function About() {
   return (
     <div
       ref={containerRef} // Attach ref to detect when container is in view
-      className="relative min-h-screen bg-[#080808] flex flex-col md:flex-row items-center justify-center px-4 md:px-12 overflow-hidden"
+      className="relative min-h-screen bg-[#000000] flex flex-col md:flex-row items-center justify-center px-4 md:px-12 overflow-hidden"
     >
       {/* Left Section */}
       <div className="relative z-10 w-full md:w-3/5 flex flex-col justify-center space-y-20 text-white mb-8 md:mb-0">
-        <motion.h1
-          ref={titleRef}
-          initial="hidden"
-          animate={isTitleInView ? "visible" : "hidden"}
-          variants={fadeIn}
-          className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center md:text-left text-[#9B1B21]"
-        >
-          Unleash the power of innovation in the vaults of HackVerse, where the heist meets technology
-        </motion.h1>
+      <motion.h1
+  ref={titleRef}
+  initial="hidden"
+  animate={isTitleInView ? "visible" : "hidden"}
+  variants={fadeIn}
+  className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center md:text-left uppercase text-[#ffffff]"
+  style={{ lineHeight: "1.5" }}
+>
+  Unleash the power of innovation in the vaults of HackVerse, <span className="bg-[#7B181D] px-4 pb-2">where the heist meets technology</span>
+</motion.h1>
+
         <motion.p
           ref={textRef1}
           initial="hidden"

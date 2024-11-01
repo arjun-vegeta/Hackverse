@@ -177,8 +177,8 @@ const StatItem = React.memo(({ number, label, delay }) => (
     viewport={{ once: true }}
     transition={{ delay, duration: 0.5, ease: "easeOut" }}
   >
-    <h2 className="text-6xl text-[#a9252c] font-bold">{number}</h2>
-    <p className="text-xl">{label}</p>
+    <h2 className="text-6xl text-[#a9252c] font-bold uppercase">{number}</h2>
+    <p className="text-xl uppercase">{label}</p>
   </motion.div>
 ));
 
@@ -201,7 +201,7 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center bg-[#000000] text-white overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center bg-[#060606] text-white overflow-hidden">
       <BackgroundText />
 
       <motion.h1
@@ -211,8 +211,8 @@ export default function StatsSection() {
         viewport={{ once: true }}
         variants={fadeInVariants}
       >
-        <span>HackVerse 4.0 </span>
-        <span className="text-[#a9252c]">Highlights</span>
+        <span>HACKVERSE 4.0 </span>
+        <span className="bg-[#7B181D] px-4 pb-2">HIGHLIGHTS</span>
       </motion.h1>
 
       <motion.div

@@ -75,15 +75,15 @@ const StickyScrollSection = () => {
 
   const contentSections = useMemo(() => [
     {
-      title: "Prizes",
+      title: "PRIZES",
       description: "FIRST\n\nRUNNER UP\n\nSECOND RUNNER UP"
     },
     {
-      title: "Special Prizes",
+      title: "SPECIAL PRIZES",
       description: "This is the description for the second section. More content to scroll through."
     },
     {
-      title: "Participation Prize",
+      title: "PARTICIPATION PRIZES",
       description: "This is the description for the third section. Keep adding as much text as needed."
     }
   ], []);
@@ -108,9 +108,7 @@ const StickyScrollSection = () => {
       const scrolledPast = -sectionRect.top;
       const lastSectionStart = totalHeight - viewportHeight;
 
-      // Calculate when we're in the last section
       if (scrolledPast >= lastSectionStart) {
-        // Calculate how far into the last section we are
         const lastSectionProgress = scrolledPast - lastSectionStart;
         setStickyPosition('absolute');
         setTranslateY(`${lastSectionStart}px`);
@@ -122,7 +120,6 @@ const StickyScrollSection = () => {
         setTranslateY('-50%');
       }
 
-      // Update rotation only when in view
       if (sectionRect.top <= viewportHeight && sectionRect.bottom >= 0) {
         const targetRotation = calculateRotation();
         const diff = targetRotation - lastRotation.current;
@@ -153,6 +150,26 @@ const StickyScrollSection = () => {
 
   return (
     <div ref={sectionRef} className="flex h-[310vh] bg-[#080808] text-white relative">
+      {/* Dot background with radial fade */}
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='dot-pattern' patternUnits='userSpaceOnUse' width='30' height='30'%3E%3Ccircle cx='15' cy='15' r='2' fill='%23666' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23dot-pattern)' /%3E%3C/svg%3E")`,
+          maskImage: "radial-gradient(ellipse at center, black, transparent 70%)",
+          WebkitMaskImage: "radial-gradient(ellipse at center, black, transparent 70%)"
+        }}
+      />
+
+      {/* Additional radial fade for the black background */}
+      <div
+        className="absolute inset-0 w-full h-full bg-[#080808]"
+        style={{
+          opacity: 0.9,
+          maskImage: "radial-gradient(ellipse at center, black, transparent 90%)",
+          WebkitMaskImage: "radial-gradient(ellipse at center, black, transparent 100%)"
+        }}
+      />
+
       <div 
         className="w-1/3 flex items-center justify-center h-screen transform-gpu"
         style={{
@@ -170,7 +187,7 @@ const StickyScrollSection = () => {
         </div>
       </div>
 
-      <div className="w-2/3 ml-auto px-8 py-16">
+      <div className="w-2/3 ml-auto px-8 py-16 relative z-10">
         {contentSections.map((section, index) => (
           <ContentSection
             key={index}
