@@ -4,6 +4,9 @@ import { LampDemo } from "./ui/lamp";
 import { motion, useInView } from "framer-motion";
 
 export default function About() {
+
+  const screenWidth = window.innerWidth;
+
   const titleRef = useRef(null);
   const isTitleInView = useInView(titleRef, { triggerOnce: false });
 
@@ -15,6 +18,7 @@ export default function About() {
 
   const imageRef = useRef(null);
   const lampRef = useRef(null);
+  const isLampInView = useInView(lampRef, { triggerOnce: false });
   const containerRef = useRef(null); // Ref for the main container
   const isInView = useInView(containerRef, { triggerOnce: false }); // Detect if the main container is in view
 
@@ -131,7 +135,7 @@ export default function About() {
         <motion.div
           ref={imageRef}
           initial="hidden"
-          animate={isTitleInView ? "visible" : "hidden"}
+          animate={screenWidth < 768 ? (isLampInView ? "visible" : "hidden") : (isTitleInView ? "visible" : "hidden")}
           variants={fadeIn}
           transition={{ duration: 1, delay: 0.3, ease: "easeInOut" }}
           className="relative flex items-center justify-center z-10"
@@ -140,10 +144,11 @@ export default function About() {
           <motion.img
             src="hackverse-img.png" // Replace with the correct image path
             alt="Lamp Demo"
-            className="w-32 sm:w-48 md:w-auto h-auto object-contain"
+            className="w-96 sm:w-32 md:w-auto h-auto object-contain"
             variants={horrorFlicker}
             initial="initial"
             animate={horrorFlicker.animate}
+            style={screenWidth < 768 ? {transform: "translateY(-50px)"} : {}}
           />
         </motion.div>
       </div>
