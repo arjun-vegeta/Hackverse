@@ -3,11 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "@tabler/icons-react": "^3.21.0",
-=======
     "@react-three/fiber": "^8.17.10",
->>>>>>> 6fa74577d599ed6c4d6a18c93e958510f6cb25f0
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

@@ -29,7 +29,7 @@ import { motion } from "framer-motion";
 
 const BackgroundText = React.memo(() => {
     return (
-      <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-transparent opacity-40 -translate-x-36 ">
+      <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-transparent opacity-60 -translate-x-36 ">
         <motion.div
           className="text-[96px] whitespace-nowrap font-black tracking-widest"
           style={{ WebkitTextStroke: "1px red" }}

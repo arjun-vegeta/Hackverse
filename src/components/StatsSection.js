@@ -1,5 +1,5 @@
-import React, { useRef, useCallback } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useCallback } from "react";
+import { motion } from "framer-motion";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 const STATS_DATA = [
@@ -10,7 +10,7 @@ const STATS_DATA = [
 
 const BackgroundText = React.memo(() => {
   return (
-    <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-transparent opacity-40 -translate-x-36 ">
+    <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-transparent opacity-60 -translate-x-36 ">
       <motion.div
         className="text-[96px] whitespace-nowrap font-black tracking-widest"
         style={{ WebkitTextStroke: "1px red" }}
