@@ -94,7 +94,7 @@ const StickyScrollSection = () => {
       if (!sectionRef.current) return 0;
 
       const sectionRect = sectionRef.current.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
+      // const viewportHeight = window.innerHeight;
       const scrollProgress = Math.max(0, Math.min(1, 1 - (sectionRect.bottom / sectionRect.height)));
       
       return scrollProgress * 360;
@@ -110,7 +110,7 @@ const StickyScrollSection = () => {
       const lastSectionStart = totalHeight - viewportHeight;
 
       if (scrolledPast >= lastSectionStart) {
-        const lastSectionProgress = scrolledPast - lastSectionStart;
+        // const lastSectionProgress = scrolledPast - lastSectionStart;
         setStickyPosition('absolute');
         setTranslateY(`${lastSectionStart}px`);
       } else if (scrolledPast <= 0) {
