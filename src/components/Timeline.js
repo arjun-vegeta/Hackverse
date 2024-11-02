@@ -1,6 +1,6 @@
 import React from "react";
 import { Timeline } from "./ui/timeline";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 export function TimelineDemo() {
   const data = [
