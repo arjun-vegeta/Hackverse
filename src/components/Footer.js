@@ -74,7 +74,7 @@ const Footer = () => {
 
       {/* Campus Images and Map */}
       <div className="container mx-auto mt-10">
-        <h3 className="text-center text-xl font-bold text-[#9B1B21] mb-6">Campus</h3>
+        <h3 className="text-center text-2xl font-bold text-[#9B1B21] mb-6">Campus</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {[1, 2, 3, 4, 5, 6].map((num) => (
             <img

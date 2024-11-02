@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
 import About from "./components/About";
@@ -11,11 +12,34 @@ import Sponsor from "./components/Sponsor";
 import { SpeakersJudges } from "./components/SpeakersJudges";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
+import Gallery from "./components/Gallery";
+import Team from "./components/Team";
 
-function App() {
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.substring(1));
+      if (element) {
+        const offset = -4 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition + offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
+
+function MainPage() {
   return (
     <div className="overflow-x-hidden">
-      <Navbar />
       <div id="home">
         <Landing />
       </div>
@@ -45,6 +69,22 @@ function App() {
       </div>
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="overflow-x-hidden">
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/team" element={<Team />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

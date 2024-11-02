@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
 import { IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin, IconBrandTwitter } from '@tabler/icons-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -16,18 +18,23 @@ const Navbar = () => {
   }, []);
 
   const handleScroll = (id) => {
-    const element = document.getElementById(id);
-    const offset = 64; 
-    const bodyRect = document.body.getBoundingClientRect().top;
-    const elementRect = element.getBoundingClientRect().top;
-    const elementPosition = elementRect - bodyRect;
-    const offsetPosition = elementPosition - offset;
+    if (window.location.pathname !== '/') {
+      navigate(`/#${id}`);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 64; 
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset - parseFloat(getComputedStyle(document.documentElement).fontSize) * 4;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth',
-    });
-
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
+    }
     setIsOpen(false);
   };
 
@@ -38,25 +45,34 @@ const Navbar = () => {
   const navList = (
     <ul className="mx-5 mt-4 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <li className="p-1 font-normal hover:text-red-900">
-        <button onClick={() => handleScroll('home')} className="flex items-center">HOME</button>
+        <Link to="/" onClick={() => handleScroll('home')} className="flex items-center">HOME</Link>
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <button onClick={() => handleScroll('about')} className="flex items-center">ABOUT</button>
+        <Link to="/#about" onClick={() => handleScroll('about')} className="flex items-center">ABOUT</Link>
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <button onClick={() => handleScroll('prizes')} className="flex items-center">PRIZES</button>
+        <Link to="/#prizes" onClick={() => handleScroll('prizes')} className="flex items-center">PRIZES</Link>
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <button onClick={() => handleScroll('speakers-judges')} className="flex items-center">JUDGES & SPEAKERS</button>
+        <Link to="/#speakers-judges" onClick={() => handleScroll('speakers-judges')} className="flex items-center">JUDGES & SPEAKERS</Link>
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <button onClick={() => handleScroll('tracks')} className="flex items-center">TRACKS</button>
+        <Link to="/#tracks" onClick={() => handleScroll('tracks')} className="flex items-center">TRACKS</Link>
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <button onClick={() => handleScroll('timeline')} className="flex items-center">TIMELINE</button>
+        <Link to="/#timeline" onClick={() => handleScroll('timeline')} className="flex items-center">TIMELINE</Link>
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <button onClick={() => handleScroll('sponsors')} className="flex items-center">SPONSORS</button>
+        <Link to="/#sponsors" onClick={() => handleScroll('sponsors')} className="flex items-center">SPONSORS</Link>
+      </li>
+      <li className="p-1 font-normal hover:text-red-900">
+        <Link to="/#faq" onClick={() => handleScroll('faq')} className="flex items-center">FAQS</Link>
+      </li>
+      <li className="p-1 font-normal hover:text-red-900">
+        <Link to="/gallery" className="flex items-center">GALLERY</Link>
+      </li>
+      <li className="p-1 font-normal hover:text-red-900">
+        <Link to="/team" className="flex items-center">TEAM</Link>
       </li>
       <div className="flex items-center gap-4 p-1">
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
