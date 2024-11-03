@@ -6,13 +6,10 @@ import { IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin, IconBrandTwit
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 960) {
-        setIsOpen(false);
-      }
-    };
+    const handleResize = () => setIsLargeScreen(window.innerWidth >= 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -23,7 +20,7 @@ const Navbar = () => {
     } else {
       const element = document.getElementById(id);
       if (element) {
-        const offset = 64; 
+        const offset = 64;
         const bodyRect = document.body.getBoundingClientRect().top;
         const elementRect = element.getBoundingClientRect().top;
         const elementPosition = elementRect - bodyRect;
@@ -38,41 +35,71 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   const navList = (
     <ul className="mx-5 mt-4 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/" onClick={() => handleScroll('home')} className="flex items-center">HOME</Link>
+        {isLargeScreen ? (
+          <Link to="/" onClick={() => handleScroll('home')} className="flex items-center">HOME</Link>
+        ) : (
+          <a href="#home" onClick={() => handleScroll('home')} className="flex items-center">HOME</a>
+        )}
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/#about" onClick={() => handleScroll('about')} className="flex items-center">ABOUT</Link>
+        {isLargeScreen ? (
+          <Link to="/#about" onClick={() => handleScroll('about')} className="flex items-center">ABOUT</Link>
+        ) : (
+          <a href="#about" onClick={() => handleScroll('about')} className="flex items-center">ABOUT</a>
+        )}
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/#prizes" onClick={() => handleScroll('prizes')} className="flex items-center">PRIZES</Link>
+        {isLargeScreen ? (
+          <Link to="/#prizes" onClick={() => handleScroll('prizes')} className="flex items-center">PRIZES</Link>
+        ) : (
+          <a href="#prizes" onClick={() => handleScroll('prizes')} className="flex items-center">PRIZES</a>
+        )}
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/#speakers-judges" onClick={() => handleScroll('speakers-judges')} className="flex items-center">JUDGES & SPEAKERS</Link>
+        {isLargeScreen ? (
+          <Link to="/#speakers-judges" onClick={() => handleScroll('speakers-judges')} className="flex items-center">JUDGES & SPEAKERS</Link>
+        ) : (
+          <a href="#speakers-judges" onClick={() => handleScroll('speakers-judges')} className="flex items-center">JUDGES & SPEAKERS</a>
+        )}
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/#tracks" onClick={() => handleScroll('tracks')} className="flex items-center">TRACKS</Link>
+        {isLargeScreen ? (
+          <Link to="/#tracks" onClick={() => handleScroll('tracks')} className="flex items-center">TRACKS</Link>
+        ) : (
+          <a href="#tracks" onClick={() => handleScroll('tracks')} className="flex items-center">TRACKS</a>
+        )}
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/#timeline" onClick={() => handleScroll('timeline')} className="flex items-center">TIMELINE</Link>
+        {isLargeScreen ? (
+          <Link to="/#timeline" onClick={() => handleScroll('timeline')} className="flex items-center">TIMELINE</Link>
+        ) : (
+          <a href="#timeline" onClick={() => handleScroll('timeline')} className="flex items-center">TIMELINE</a>
+        )}
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/#sponsors" onClick={() => handleScroll('sponsors')} className="flex items-center">SPONSORS</Link>
+        {isLargeScreen ? (
+          <Link to="/#sponsors" onClick={() => handleScroll('sponsors')} className="flex items-center">SPONSORS</Link>
+        ) : (
+          <a href="#sponsors" onClick={() => handleScroll('sponsors')} className="flex items-center">SPONSORS</a>
+        )}
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/#faq" onClick={() => handleScroll('faq')} className="flex items-center">FAQS</Link>
+        {isLargeScreen ? (
+          <Link to="/#faq" onClick={() => handleScroll('faq')} className="flex items-center">FAQS</Link>
+        ) : (
+          <a href="#faq" onClick={() => handleScroll('faq')} className="flex items-center">FAQS</a>
+        )}
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/gallery" className="flex items-center">GALLERY</Link>
+        <Link to="/gallery" onClick={() => setIsOpen(false)} className="flex items-center">GALLERY</Link>
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/team" className="flex items-center">TEAM</Link>
+        <Link to="/team" onClick={() => setIsOpen(false)} className="flex items-center">TEAM</Link>
       </li>
       <div className="flex items-center gap-4 p-1">
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
