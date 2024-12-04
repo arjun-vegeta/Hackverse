@@ -4,95 +4,146 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "./ui/canvas-reveal-effect";
 
 export function CanvasRevealEffectDemo() {
+  const heistData = [
+    {
+      title: "The Knowledge Exchange: EdTech",
+      description: "Revolutionise education through sustainability-focused tools and resources.",
+      prize: "₹10,000",
+      icon: "/tracks/Edtech.png"
+    },
+    {
+      title: "The Vital Vault: HealthCare", 
+      description: "Solutions for sustainable healthcare, mental health, and accessible medical resources.",
+      prize: "₹10,000",
+      icon: "/tracks/Healthcare.png"
+    },
+    {
+      title: "The Treasure Fund: Finance",
+      description: "Finance and green investments, encouraging eco-conscious financial tools.",
+      prize: "₹10,000",
+      icon: "/tracks/Finance.png"
+    },
+    {
+      title: "The Safe Zone: Security",
+      description: "Address cybersecurity, data privacy, and tech safety.",
+      prize: "₹10,000",
+      icon: "/tracks/Security.png"
+    },
+    {
+      title: "Women In Tech",
+      description: "Celebrating and empowering women in technology by rewarding the best-performing all-women team with innovative and impactful tech solutions.",
+      prize: "₹10,000",
+      icon: "/tracks/WomeninTech.png"
+    },
+        {
+      title: "The Green Vault: Environment & Energy Conservation",
+      description: "Tackle environmental challenges, energy efficiency, and conservation innovations.",
+      prize: "₹10,000",
+      icon: "/tracks/Energy.png"
+    },
+    {
+      title: "Product Design",
+      description: "Recognizing excellence in UI/UX design by awarding the best-designed product that showcases user-centric innovation and exceptional aesthetics.",
+      prize: "₹10,000",
+      icon: "/tracks/Product.png"
+    }
+];
+
+ /* Repeating Background Text */
+
+ const BackgroundText = React.memo(() => {
+  const repeatText = 'heists';
+  
+  const alignmentVariations = [
+    `&nbsp;&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`,
+    `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`,
+    `&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`,
+    `&nbsp;&nbsp;&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`
+  ];
+
   return (
-    <div className="relative overflow-hidden bg-black z-10 min-h-screen">
-<div
-  className="absolute inset-0 z-10"
-  style={{
-    backgroundImage: `url('/bg_prof.JPG')`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed'
-  }}
-></div>
+    <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-[#434343] opacity-60 -translate-x-36">
+      {[...Array(24)].map((_, index) => (
+        <motion.div
+          key={index}
+          className="text-[96px] whitespace-nowrap font-black tracking-wider md:tracking-widest"
+          style={{ 
+            WebkitTextStroke: index === 1 || index === 15 ? '1px' : '0px red'
+          }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 0.6, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ 
+            duration: 1, 
+            ease: "easeOut", 
+            delay: index * 0.05 
+          }}
+          dangerouslySetInnerHTML={{
+            __html: alignmentVariations[index % alignmentVariations.length]
+          }}
+        />
+      ))}
+    </div>
+  );
+});
 
+BackgroundText.displayName = 'BackgroundText';
 
-      {/* Title Container */}
+return (
+  <div className="relative overflow-hidden bg-black z-10 min-h-screen">
+    <BackgroundText />
+    <div
+      className="absolute inset-0 z-10 bg-cover bg-right bg-fixed hidden md:block"
+      style={{
+        backgroundImage: `url('backgrounds/bg_prof.JPG')`,
+      }}
+    ></div>
+
+      {/* Title  */}
       <div className="relative flex justify-center items-start pt-8 md:pt-20 z-20 w-full">
-        <h1 className="text-[#ffffff] text-3xl md:text-6xl font-bold whitespace-nowrap">
+        <h1 className="font-bold text-white mb-6 text-4xl md:text-6xl">
           CHOOSE YOUR <span className="bg-[#7B181D] px-4 pb-2">HEIST</span>
         </h1>
       </div>
 
-      {/* Cards Section */}
-      <div className="relative flex items-center justify-start min-h-screen pt-20 md:pt-0 pb-20">
-        <div className="relative w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-10 px-4 md:px-8 z-20 md:ml-[10%] md:mr-0 w-[80%] justify-items-center">
-          
-          {/* Card Components */}
-          <Card title="Taj Mahal Heist" icon={<AceternityIcon />}>
-            <CanvasRevealEffect
-              animationSpeed={3}
-              containerClassName="bg-black"
-              colors={[
-                [236, 72, 153],
-                [232, 121, 249],
-              ]}
-              dotSize={2}
-            />
-            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
-          </Card>
-
-          <Card title="White House Heist" icon={<AceternityIcon />}>
-            <CanvasRevealEffect
-              animationSpeed={3}
-              containerClassName="bg-black"
-              colors={[
-                [236, 72, 153],
-                [232, 121, 249],
-              ]}
-            />
-          </Card>
-          <Card title="Taj Mahal Heist" icon={<AceternityIcon />}>
-            <CanvasRevealEffect
-              animationSpeed={3}
-              containerClassName="bg-black"
-              colors={[
-                [236, 72, 153],
-                [232, 121, 249],
-              ]}
-              dotSize={2}
-            />
-            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
-          </Card>
-
-          <Card title="White House Heist" icon={<AceternityIcon />}>
-            <CanvasRevealEffect
-              animationSpeed={3}
-              containerClassName="bg-black"
-              colors={[
-                [236, 72, 153],
-                [232, 121, 249],
-              ]}
-            />
-          </Card>
+      {/* Cards  */}
+      <div className="relative flex items-center justify-center min-h-screen pt-20 md:pt-0 pb-20">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 z-20">
+          <div className="flex flex-wrap justify-center gap-y-5 gap-x-5 sm:gap-x-8 md:gap-x-10 lg:gap-x-16 xl:gap-x-14 2xl:gap-x-16">
+            {heistData.map((heist, index) => (
+              <Card 
+                key={index}
+                title={heist.title} 
+                description={heist.description}
+                prize={heist.prize}
+                icon={heist.icon}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-const Card = ({ title, icon, children }) => {
+const Card = ({ title, description, prize, icon }) => {
   const [hovered, setHovered] = React.useState(false);
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border border-[#a9252c] group/canvas-card flex items-center justify-center dark:border-[#a9252c] w-[70%] sm:w-full p-4 relative aspect-[2/3] h-[280px] sm:h-[320px] lg:h-[400px] mb-4 sm:mb-0"
+      className="border border-[#a9252c] group/canvas-card 
+                 flex items-center justify-center 
+                 dark:border-[#a9252c] 
+                 w-[250px] h-[350px] 
+                 relative 
+                 mb-4"
     >
-      <Icon className="absolute h-4 w-4 md:h-6 md:w-6 -top-3 -left-3 dark:text-white text-white" />
-      <Icon className="absolute h-4 w-4 md:h-6 md:w-6 -bottom-3 -left-3 dark:text-white text-white" />
-      <Icon className="absolute h-4 w-4 md:h-6 md:w-6 -top-3 -right-3 dark:text-white text-white" />
-      <Icon className="absolute h-4 w-4 md:h-6 md:w-6 -bottom-3 -right-3 dark:text-white text-white" />
+      <Icon className="absolute h-4 w-4 md:h-6 md:w-6 -top-3 -left-3 dark:text-white text-[#a9252c]" />
+      <Icon className="absolute h-4 w-4 md:h-6 md:w-6 -bottom-3 -left-3 dark:text-white text-[#a9252c]" />
+      <Icon className="absolute h-4 w-4 md:h-6 md:w-6 -top-3 -right-3 dark:text-white text-[#a9252c]" />
+      <Icon className="absolute h-4 w-4 md:h-6 md:w-6 -bottom-3 -right-3 dark:text-white text-[#a9252c]" />
+      
       <AnimatePresence>
         {hovered && (
           <motion.div
@@ -100,43 +151,39 @@ const Card = ({ title, icon, children }) => {
             animate={{ opacity: 1 }}
             className="h-full w-full absolute inset-0"
           >
-            {children}
+            <CanvasRevealEffect
+              animationSpeed={3}
+              containerClassName="bg-black"
+              colors={[
+                [236, 72, 153],
+                [232, 121, 249]
+              ]}
+              dotSize={2}
+            />
+            <div className="uppercase absolute inset-0 bg-black/70 flex flex-col gap-y-10 items-center justify-center text-white p-4 text-center">
+              <h2 className="uppercase text-2xl text-white font-bold ">{title}</h2>
+              <p className="uppercase text-base opacity-70">{description}</p>
+              <div className="uppercase text-2xl font-semibold text-[#7B181D]">Prize: {prize}</div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="relative z-20">
+      
+      <div className="relative z-20 flex flex-col items-center justify-center">
         <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full flex items-center justify-center">
-          {icon}
+          <img 
+            src={icon} 
+            alt={title} 
+            className="h-auto w-[85%] object-contain" 
+          />
         </div>
-        <h2 className="dark:text-white text-base md:text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center">
+        <h2 className="hidden dark:text-white text-base md:text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center">
           {title}
         </h2>
       </div>
     </div>
   );
 }
-
-const AceternityIcon = () => {
-  return (
-    <svg
-      width="40" 
-      height="40" 
-      viewBox="0 0 66 65"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-8 w-8 sm:h-10 sm:w-10 text-[#ffffff] dark:text-white group-hover/canvas-card:text-white"
-    >
-      <path
-        d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"
-        stroke="currentColor"
-        strokeWidth="15"
-        strokeMiterlimit="3.86874"
-        strokeLinecap="round"
-        style={{ mixBlendMode: "darken" }}
-      />
-    </svg>
-  );
-};
 
 export const Icon = ({ className, ...rest }) => {
   return (

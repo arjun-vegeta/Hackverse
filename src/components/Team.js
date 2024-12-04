@@ -1,12 +1,14 @@
 import React from 'react';
 import HoverEffect from './ui/card-hover-effect-2';
 
+ /* team members info */
+
 const teamMembers = {
   patron: [
     {
       name: "Patron Name",
       short_desc: "Patron Title",
-      image: "/person.png",
+      image: "img/person.png",
       twitter_url: "https://twitter.com/patron",
       github_url: "https://github.com/patron",
       linkedin_url: "https://linkedin.com/in/patron",
@@ -16,7 +18,7 @@ const teamMembers = {
     {
       name: "Faculty Advisor 1",
       short_desc: "Advisor Title",
-      image: "/person.png",
+      image: "img/person.png",
       twitter_url: "https://twitter.com/advisor1",
       github_url: "https://github.com/advisor1",
       linkedin_url: "https://linkedin.com/in/advisor1",
@@ -24,7 +26,7 @@ const teamMembers = {
     {
       name: "Faculty Advisor 2",
       short_desc: "Advisor Title",
-      image: "/person.png",
+      image: "img/person.png",
       twitter_url: "https://twitter.com/advisor2",
       github_url: "https://github.com/advisor2",
       linkedin_url: "https://linkedin.com/in/advisor2",
@@ -32,7 +34,7 @@ const teamMembers = {
     {
       name: "Faculty Advisor 3",
       short_desc: "Advisor Title",
-      image: "/person.png",
+      image: "img/person.png",
       twitter_url: "https://twitter.com/advisor3",
       github_url: "https://github.com/advisor3",
       linkedin_url: "https://linkedin.com/in/advisor3",
@@ -42,7 +44,7 @@ const teamMembers = {
     {
       name: "Committee Member 1",
       short_desc: "Committee Title",
-      image: "/person.png",
+      image: "img/person.png",
       twitter_url: "https://twitter.com/committee1",
       github_url: "https://github.com/committee1",
       linkedin_url: "https://linkedin.com/in/committee1",
@@ -53,7 +55,7 @@ const teamMembers = {
     {
       name: "Student Member 1",
       short_desc: "Student Title",
-      image: "/person.png",
+      image: "img/person.png",
       twitter_url: "https://twitter.com/student1",
       github_url: "https://github.com/student1",
       linkedin_url: "https://linkedin.com/in/student1",
@@ -61,7 +63,7 @@ const teamMembers = {
     {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -69,7 +71,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -77,7 +79,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -85,7 +87,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -93,7 +95,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -101,7 +103,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -109,7 +111,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -117,7 +119,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -125,7 +127,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -133,7 +135,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -141,7 +143,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -149,7 +151,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -157,7 +159,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",
@@ -165,7 +167,7 @@ const teamMembers = {
       {
         name: "Student Member 1",
         short_desc: "Student Title",
-        image: "/person.png",
+        image: "img/person.png",
         twitter_url: "https://twitter.com/student1",
         github_url: "https://github.com/student1",
         linkedin_url: "https://linkedin.com/in/student1",

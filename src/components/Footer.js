@@ -3,7 +3,6 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="bg-black text-white p-10 px-6">
-      {/* Main content section */}
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center space-y-8 lg:space-y-0">
         {/* Left section for HackVerse info */}
         <div className="lg:w-1/2 text-center space-y-3">
@@ -109,13 +108,13 @@ const Footer = () => {
             Code of Conduct
           </a>
            | 
-          <a href="./docs/HackVerse Terms & Conditions.pdf" target="_blank" rel="noopener noreferrer" className="text-[#9B1B21] hover:underline">
+          <a href="./" target="_blank" rel="noopener noreferrer" className="text-[#9B1B21] hover:underline">
             Terms & Conditions
           </a>
         </p>
         <p>
           © 2023 All rights reserved | Made with <span className="bi bi-heart-fill text-[#9B1B21]">❤</span> by the
-          <a href="/team/index.html" className="text-[#9B1B21] hover:underline"> Hackverse Team</a>
+          <a href="/team" className="text-[#9B1B21] hover:underline"> Hackverse Team</a>
         </p>
       </div>
     </footer>

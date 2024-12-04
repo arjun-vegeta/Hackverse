@@ -15,21 +15,26 @@ const Navbar = () => {
   }, []);
 
   const handleScroll = (id) => {
-    if (window.location.pathname !== '/') {
-      navigate(`/#${id}`);
+    if (id === 'home' || id === 'gallery' || id === 'team') {
+      navigate(`/${id === 'home' ? '' : id}`);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      const element = document.getElementById(id);
-      if (element) {
-        const offset = 64;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = element.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset - parseFloat(getComputedStyle(document.documentElement).fontSize) * 4;
+      if (window.location.pathname !== '/') {
+        navigate(`/#${id}`);
+      } else {
+        const element = document.getElementById(id);
+        if (element) {
+          const offset = 64;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = element.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset - parseFloat(getComputedStyle(document.documentElement).fontSize) * 4;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        });
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
+        }
       }
     }
     setIsOpen(false);
@@ -95,13 +100,13 @@ const Navbar = () => {
           <a href="#faq" onClick={() => handleScroll('faq')} className="flex items-center">FAQS</a>
         )}
       </li>
-      <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/gallery" onClick={() => setIsOpen(false)} className="flex items-center">GALLERY</Link>
+      <li className="p-1 font-normal hover:text-red-900 ">
+        <Link to="/gallery" onClick={() => handleScroll('gallery')} className="flex items-center">GALLERY</Link>
       </li>
-      <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/team" onClick={() => setIsOpen(false)} className="flex items-center">TEAM</Link>
-      </li>
-      <div className="flex items-center gap-4 p-1">
+      {/* <li className="p-1 font-normal hover:text-red-900">
+        <Link to="/team" onClick={() => handleScroll('team')} className="flex items-center">TEAM</Link>
+      </li> */}
+      <div className="flex items-center gap-4 p-1 md:hidden">
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
           <IconBrandLinkedin strokeWidth={1.2} className="hover:text-red-900" />
         </a>
@@ -119,10 +124,10 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="fixed bg-black border-black bg-opacity-100 backdrop-blur-xl top-0 z-50 h-max w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 shadow-md shadow-[#7b181da5]">
+    <nav className="fixed bg-black border-black bg-opacity-100 backdrop-blur-xl top-0 z-50 h-max w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 shadow-md shadow-[#7b181d00]">
       <div className="flex justify-between items-center text-white">
         <a href="/" className="text-2xl font-bold">
-          <img src="/logo.png" alt="Logo" className="h-10 w-auto ml-5" />
+          <img src="img/nav-logo.png" alt="Logo" className="h-10 w-auto ml-5" />
         </a>
         <div className="hidden lg:block">{navList}</div>
         <div className="lg:hidden">
